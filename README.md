@@ -8,3 +8,4 @@ Currently, two official plugins are available:
 - TailwindCSS
 - DaisyUI
 - Firebase
+- React icons
