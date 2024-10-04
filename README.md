@@ -9,3 +9,4 @@ Currently, two official plugins are available:
 - DaisyUI
 - Firebase
 - React icons
+- react-slick
