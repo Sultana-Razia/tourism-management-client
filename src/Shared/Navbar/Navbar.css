@@ -1,0 +1,11 @@
+/* Default link style */
+.inactive-link {
+    color: black;
+    text-decoration: none;
+}
+
+/* Style for active link */
+.active-link {
+    color: #E8604C;
+    font-weight: bold;
+}

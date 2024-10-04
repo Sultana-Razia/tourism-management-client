@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 const Login = () => {
 
@@ -32,6 +33,7 @@ const Login = () => {
 
     return (
         <div>
+            <Navbar></Navbar>
             <div className="hero bg-base-200 min-h-screen rounded-md mt-6">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">

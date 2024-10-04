@@ -3,6 +3,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 import { IoIosEyeOff } from 'react-icons/io';
 import { FaEye } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import Navbar from '../../Shared/Navbar/Navbar';
 
 
 const Register = () => {
@@ -60,6 +61,7 @@ const Register = () => {
 
     return (
         <div>
+            <Navbar></Navbar>
             <div className="hero bg-base-200 min-h-screen rounded-md mt-6">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <div className="text-center lg:text-left">
