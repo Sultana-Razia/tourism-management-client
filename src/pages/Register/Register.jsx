@@ -4,6 +4,7 @@ import { IoIosEyeOff } from 'react-icons/io';
 import { FaEye } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import Navbar from '../../Shared/Navbar/Navbar';
+import Footer from '../../Shared/Footer/Footer';
 
 
 const Register = () => {
@@ -120,6 +121,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
