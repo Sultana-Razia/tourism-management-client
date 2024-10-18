@@ -10,3 +10,4 @@ Currently, two official plugins are available:
 - Firebase
 - React icons
 - react-slick
+- SweetAlert
