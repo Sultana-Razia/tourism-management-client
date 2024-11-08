@@ -5,6 +5,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import AddTouristSpot from "../pages/AddTouristSpot/AddTouristSpot";
 import NotFound from "../pages/NotFound/NotFound";
+import AllTouristSpot from "../pages/AllTouristSpot/AllTouristSpot";
 
 
 
@@ -30,7 +31,12 @@ const router = createBrowserRouter([
             {
                 path: '/addTouristSpot',
                 element: <AddTouristSpot></AddTouristSpot>
-            }
+            },
+            {
+                path: '/allTouristSpot',
+                element: <AllTouristSpot></AllTouristSpot>,
+                loader: () => fetch('http://localhost:5000/touristSpot')
+            },
         ]
     },
 ]);

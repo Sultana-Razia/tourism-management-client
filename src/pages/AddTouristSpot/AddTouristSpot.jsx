@@ -57,8 +57,8 @@ const AddTouristSpot = () => {
 
             <div className='w-[80%] mx-auto my-9 '>
                 <div className='bg-[#F4F3F0] rounded-md'>
-                    <h2 className='text-center text-[#374151] text-5xl pt-16 rancho-google-font font-extrabold'>Add tourist spot</h2>
-                    <p className='text-center text-lg text-[#1B1A1AB3] py-8 px-28 raleway-google-font'>It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
+                    <h2 className='text-center text-[#E8604C] text-5xl pt-16 rancho-google-font font-extrabold'>Add Tourist Spot</h2>
+                    <p className='text-center text-lg text-[#1B1A1AB3] py-8 px-28 raleway-google-font'>Thisis a feature that allows users to contribute to our growing travel guide by sharing new and exciting destinations. Whether it's a hidden gem or a popular attraction, users can easily submit details about a tourist spot, including its name, location, a brief description, entry costs, and seasonal highlights. This collaborative platform encourages travelers to enrich the community's knowledge, helping others discover unique places worldwide. </p>
                     <form onSubmit={handleAddTouristSpot} className='px-28 pb-16'>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-7'>
                             {/* First Row */}
@@ -136,7 +136,7 @@ const AddTouristSpot = () => {
                             </label>
                         </div>
                         <div className='w-full text-[#331A15] border-[#331A15] rounded-md text-center py-2 mt-6 font-semibold rancho-google-font'>
-                            <input type="submit" value="Add" className='btn btn-block text-2xl bg-[#D2B48C]' />
+                            <input type="submit" value="Add" className='btn btn-block text-2xl text-white bg-[#E8604C]' />
                         </div>
                     </form>
                 </div>
