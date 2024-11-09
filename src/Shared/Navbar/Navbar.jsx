@@ -1,11 +1,20 @@
 import React from 'react';
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProviders";
 import { CgProfile } from "react-icons/cg";
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
 
+    const { user, logOut } = useContext(AuthContext);
+    console.log(user);
 
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
 
 
     return (
@@ -64,24 +73,43 @@ const Navbar = () => {
                     <li><NavLink to='/contact'>Contact</NavLink></li>
                 </ul>
             </div>
+
             <div className="navbar-end">
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            {/* <img
-                                alt="User profile"
-                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" /> */}
-                            <CgProfile className='text-4xl mt-[2px] ml-[2px] text-[#E8604C]' />
+                        <div className="w-10 relative">
+                            {
+                                user ?
+                                    <div className="group w-24 absolute -left-7 px-3 py-2 bg-grey-200 text-xs">
+                                        <span className="hidden group-hover:block ">
+                                            {user?.displayName}
+                                        </span>
+                                        <img
+                                            className="rounded-full"
+                                            alt="user photo"
+                                            src={user?.photoURL} />
+                                    </div>
+                                    :
+                                    <CgProfile className='text-4xl mt-[2px] ml-[2px] text-[#E8604C]' />
+                            }
                         </div>
                     </div>
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                        <li><NavLink to='/login'>Login</NavLink></li>
+                        <div>
+                            {
+                                user ?
+                                    <li><NavLink to='' onClick={handleSignOut}>Sign Out</NavLink></li>
+                                    :
+                                    <li><NavLink to='/login'>Login</NavLink></li>
+                            }
+                        </div>
                         <li><NavLink to='/register'>Register</NavLink></li>
                     </ul>
                 </div>
             </div>
+
         </div>
     );
 };
