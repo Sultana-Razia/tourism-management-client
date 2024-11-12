@@ -1,8 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useContext, useRef } from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const AddTouristSpot = () => {
+    const { user } = useContext(AuthContext);
 
     const textAreaRef = useRef(null);
 
@@ -22,10 +24,11 @@ const AddTouristSpot = () => {
         const userName = form.user_name.value;
         const userEmail = form.user_email.value;
         const description = textAreaRef.current.value;
+        const email = user.email;
 
         // console.log(touristSpot, countryName, location, averageCost, photo, season, travelTime, totalVisitorsPerYear, userName, userEmail, description);
 
-        const newSpot = { touristSpot, countryName, location, averageCost, photo, season, travelTime, totalVisitorsPerYear, userName, userEmail, description };
+        const newSpot = { touristSpot, countryName, location, averageCost, photo, season, travelTime, totalVisitorsPerYear, userName, userEmail, description, email };
         console.log(newSpot);
 
         //Send data to the server
