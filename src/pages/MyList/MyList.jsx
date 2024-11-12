@@ -1,16 +1,18 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
 import Footer from '../../Shared/Footer/Footer';
-import { useLoaderData } from 'react-router-dom';
+// import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const MyList = () => {
     const { user } = useContext(AuthContext);
 
     const [myList, setMyList] = useState([]);
 
-    const touristSpots = useLoaderData();
-    console.log(touristSpots);
+    // const touristSpots = useLoaderData();
+    // console.log(touristSpots);
 
 
 
@@ -26,6 +28,37 @@ const MyList = () => {
             })
     }, [user])
 
+
+    const handleDelete = _id => {
+        console.log(_id);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/touristSpot/${_id}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your tourist spot has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
+            }
+        });
+    }
+
     return (
         <div>
             <Navbar></Navbar>
@@ -40,16 +73,21 @@ const MyList = () => {
                                 <p className="text-gray-600 mt-1">Average Cost: <span className="font-medium">${m.averageCost}</span></p>
                                 <p className="text-gray-600 mt-1">Best Season: <span className="font-medium">{m.season}</span></p>
                                 <div className="mt-4 flex space-x-3">
-                                    <button
-                                        className="flex-1 bg-blue-500 hover:bg-blue-600 text-white text-center py-2 rounded-lg"
-                                    >
-                                        Update
-                                    </button>
-                                    <button
-                                        className="flex-1 bg-red-500 hover:bg-red-600 text-white text-center py-2 rounded-lg"
-                                    >
-                                        Delete
-                                    </button>
+                                    <Link className='flex-1 bg-blue-500 hover:bg-blue-600 text-white text-center py-2 rounded-lg' to={m._id}>
+                                        <button
+                                            className=""
+                                        >
+                                            Update
+                                        </button>
+                                    </Link>
+                                    <Link className='flex-1 bg-red-500 hover:bg-red-600 text-white text-center py-2 rounded-lg'>
+                                        <button
+                                            onClick={() => handleDelete(m._id)}
+                                            className=""
+                                        >
+                                            Delete
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
