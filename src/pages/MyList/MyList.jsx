@@ -15,7 +15,6 @@ const MyList = () => {
     // console.log(touristSpots);
 
 
-
     //{ _id, touristSpot, countryName, location, averageCost, photo, season, travelTime, totalVisitorsPerYear, userName, userEmail, description }
 
 
@@ -41,7 +40,7 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/touristSpot/${_id}`, {
+                fetch(`http://localhost:5000/delete/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -53,6 +52,8 @@ const MyList = () => {
                                 text: "Your tourist spot has been deleted.",
                                 icon: "success"
                             });
+                            const remaining = myList.filter(m => m._id !== _id);
+                            setMyList(remaining);
                         }
                     })
             }
@@ -73,7 +74,9 @@ const MyList = () => {
                                 <p className="text-gray-600 mt-1">Average Cost: <span className="font-medium">${m.averageCost}</span></p>
                                 <p className="text-gray-600 mt-1">Best Season: <span className="font-medium">{m.season}</span></p>
                                 <div className="mt-4 flex space-x-3">
-                                    <Link className='flex-1 bg-blue-500 hover:bg-blue-600 text-white text-center py-2 rounded-lg' to={m._id}>
+                                    <Link
+                                        to={`/updateTouristSpot/${m._id}`}
+                                        className='flex-1 bg-blue-500 hover:bg-blue-600 text-white text-center py-2 rounded-lg'>
                                         <button
                                             className=""
                                         >
