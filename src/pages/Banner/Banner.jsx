@@ -21,7 +21,7 @@ const Banner = () => {
     };
 
     return (
-        <div className='w-[80%] mx-auto mt-3'>
+        <div className='w-[80%] mx-auto mt-10'>
             <Slider {...settings}>
                 <div>
                     <img className="h-[300px] md:h-[400px] lg:h-[500px] w-full rounded-md"

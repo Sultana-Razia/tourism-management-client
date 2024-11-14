@@ -10,6 +10,8 @@ import TouristSpotDetails from "../pages/TouristSpotDetails/TouristSpotDetails";
 import PrivateRoute from "./PrivateRoute";
 import MyList from "../pages/MyList/MyList";
 import UpdateTouristSpot from "../components/UpdateTouristSpot";
+import Indonesia from "../components/Country/Indonesia";
+import Malaysia from "../components/Country/Malaysia";
 
 
 
@@ -24,6 +26,15 @@ const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: () => fetch('http://localhost:5000/touristSpot')
+            },
+            {
+                path: '/country/:country',
+                element: <Indonesia></Indonesia>,
+                loader: () => fetch('http://localhost:5000/touristSpot')
+            },
+            {
+                path: '/malaysia',
+                element: <Malaysia></Malaysia>
             },
             {
                 path: '/register',
