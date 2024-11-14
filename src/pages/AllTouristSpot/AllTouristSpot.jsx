@@ -10,7 +10,7 @@ const AllTouristSpot = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h2 className='text-6xl text-center'>All Tourist Spot : {allTouristSpots.length}</h2>
+            <h2 className='text-4xl text-center mt-10 text-[#E8604C] font-medium lobster-regular'>All TouristSpots</h2>
             <div className='w-[80%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
                 {
                     allTouristSpots.map(allTouristSpot => <TouristSpotCard

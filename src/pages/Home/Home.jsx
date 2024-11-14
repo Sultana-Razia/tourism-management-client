@@ -4,6 +4,7 @@ import Banner from '../Banner/Banner';
 import Footer from '../../Shared/Footer/Footer';
 import { Link, useLoaderData } from 'react-router-dom';
 import TouristSpotCard from '../../components/TouristSpotCard';
+import Gallery from '../../components/Gallery';
 
 const Home = () => {
 
@@ -31,6 +32,7 @@ const Home = () => {
                     >See More</button></Link>
                 </div>
             </div>
+            <Gallery></Gallery>
             <Footer></Footer>
         </div>
     );
