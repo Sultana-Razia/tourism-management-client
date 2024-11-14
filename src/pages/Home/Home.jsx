@@ -21,7 +21,7 @@ const Home = () => {
             <Banner></Banner>
             <div className='w-[80%] mx-auto mt-24'>
                 <h2 className='text-4xl text-center text-[#E8604C] font-medium lobster-regular'>Destination List</h2>
-                <div className='grid grid-cols-4 gap-3 mt-5'>
+                <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 mt-5'>
                     <Link to={`/country/indonesia`} className='col-span-1'>
                         <div className="bg-[url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-wGFN5xMACPOYrgNEdtMOcCv5E8vShfuWJ6b8sf2Oi32SPB-tezV3mncwBjBMcBKSlB0&usqp=CAU')] rounded-md h-[300px] bg-cover">
                             <h1 className='text-white font-bold text-3xl text-center lobster-regular pt-16'>Indonesia</h1>

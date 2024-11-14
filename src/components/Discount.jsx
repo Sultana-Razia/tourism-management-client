@@ -8,11 +8,11 @@ const Discount = () => {
                 <h1 className='lobster-regular font-bold text-4xl'>WINTER SPECIAL 35% OFF !</h1>
                 <p className=' text-lg font-semibold text-center'>Enter you email to receive hot special offers and information about the <br /> best tour packages, updates and discounts !!</p>
                 <div className='mt-5 flex justify-center'>
-                    <form className='w-[500px] outline flex justify-between'>
+                    <form className='w-[300px] md:w-[500px] outline flex justify-between'>
                         <input
-                            className='bg-transparent px-3 py-3 text-white'
+                            className='bg-transparent md:px-3 py-3 text-white'
                             type="email" name="email" placeholder='Your Email' id="" />
-                        <button className='bg-[#E8604C] px-10 py-3 text-xl font-semibold rounded-md text-white' type="submit">Submit</button>
+                        <button className='bg-[#E8604C] px-2 md:px-10 py-3 text-xl font-semibold rounded-md text-white' type="submit">Submit</button>
                     </form>
                 </div>
             </div>
