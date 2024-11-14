@@ -8,6 +8,7 @@ import Gallery from '../../components/Gallery';
 
 import image1 from '../../assets/images/card1.jpg'
 import image2 from '../../assets/images/card2.jpg'
+import Discount from '../../components/Discount';
 
 const Home = () => {
 
@@ -48,7 +49,7 @@ const Home = () => {
                     </Link>
                 </div>
             </div>
-
+            <Discount></Discount>
             <div className='w-[80%] mx-auto'>
                 <div className='text-center mt-24'>
                     <h2 className='lobster-regular text-3xl text-[#E8604C]'>Most Popular Tours</h2>
