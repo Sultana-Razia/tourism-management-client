@@ -17,7 +17,7 @@ const UpdateTouristSpot = () => {
     // console.log(updateTouristSpot);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/update/${id}`)
+        fetch(`https://tourism-management-server-flax.vercel.app/update/${id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -52,7 +52,7 @@ const UpdateTouristSpot = () => {
         console.log(update);
 
         //Send data to the server
-        fetch(`http://localhost:5000/updateTouristSpot/${id}`, {
+        fetch(`https://tourism-management-server-flax.vercel.app/updateTouristSpot/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

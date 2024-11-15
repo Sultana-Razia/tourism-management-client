@@ -25,12 +25,12 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/touristSpot')
+                loader: () => fetch('https://tourism-management-server-flax.vercel.app/touristSpot')
             },
             {
                 path: '/country/:country',
                 element: <Indonesia></Indonesia>,
-                loader: () => fetch('http://localhost:5000/touristSpot')
+                loader: () => fetch('https://tourism-management-server-flax.vercel.app/touristSpot')
             },
             {
                 path: '/malaysia',
@@ -51,22 +51,22 @@ const router = createBrowserRouter([
             {
                 path: '/updateTouristSpot/:id',
                 element: <PrivateRoute><UpdateTouristSpot></UpdateTouristSpot></PrivateRoute>,
-                loader: () => fetch(`http://localhost:5000/touristSpot`)
+                loader: () => fetch(`https://tourism-management-server-flax.vercel.app/touristSpot`)
             },
             {
                 path: '/allTouristSpot',
                 element: <AllTouristSpot></AllTouristSpot>,
-                loader: () => fetch('http://localhost:5000/touristSpot')
+                loader: () => fetch('https://tourism-management-server-flax.vercel.app/touristSpot')
             },
             {
                 path: '/touristSpot/:id',
                 element: <PrivateRoute><TouristSpotDetails></TouristSpotDetails></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/touristSpot')
+                loader: () => fetch('https://tourism-management-server-flax.vercel.app/touristSpot')
             },
             {
                 path: '/myList',
                 element: <PrivateRoute><MyList></MyList></PrivateRoute>,
-                // loader: () => fetch('http://localhost:5000/touristSpot')
+                // loader: () => fetch('https://tourism-management-server-flax.vercel.app/touristSpot')
             }
         ]
     },
